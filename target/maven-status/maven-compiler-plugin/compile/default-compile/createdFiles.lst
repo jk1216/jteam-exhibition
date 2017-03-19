@@ -1,0 +1,10 @@
+com\jteam\exhibition\RegisterServiceVertxProxyHandler.class
+com\jteam\exhibition\RegisterConverter.class
+com\jteam\exhibition\RegisterServiceVertxEBProxy.class
+com\jteam\exhibition\RegisterService.class
+com\jteam\exhibition\imp\JdbcRegisterServiceImpl.class
+com\jteam\exhibition\api\RestExhibitionRegisterAPIVerticle.class
+com\jteam\exhibition\ExhibitionRegisterVerticle.class
+com\jteam\exhibition\package-info.class
+com\jteam\exhibition\rxjava\RegisterService.class
+com\jteam\exhibition\Register.class
