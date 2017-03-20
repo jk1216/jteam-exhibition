@@ -7,4 +7,4 @@ cpid=`jps -v| grep exhibition-register-server `
 if [ -n "$cpid" ]; then
   echo $cpid | cut -d " " -f1 | xargs kill -9
 fi
-nohup java -Did=exhibition-register-server -jar target/royalnu-demo-exhibition-registration-0.0.1-SNAPSHOT-fat.jar -conf target/local.json > log.file 2>&1 &
+nohup java -Did=exhibition-register-server -jar target/exhibition-registration-0.0.1-SNAPSHOT-fat.jar -conf target/local.json > log.file 2>&1 &
