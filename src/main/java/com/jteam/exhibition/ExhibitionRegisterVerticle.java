@@ -25,11 +25,19 @@ public class ExhibitionRegisterVerticle extends BaseMicroserviceVerticle {
     super.start();
 
     // create the service instance
+/*    System.out.println(config());
+   config().put("url","jdbc:mysql://localhost:3306/exhibition?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false")
+    .put("driver_class", "com.mysql.cj.jdbc.Driver")
+    .put("user","root")
+    .put("password", "jackey");
+    System.out.println(config());*/
     registerService = new JdbcRegisterServiceImpl(vertx, config());
     registerService.initializePersistence(resultHandler->{
 	    if(resultHandler.succeeded())
 	    {
 	    		System.out.println("数据库初始化成功");
+	    }else{
+	    	System.out.println("数据库初始化失败:"+resultHandler.cause());
 	    }
     	
     });
