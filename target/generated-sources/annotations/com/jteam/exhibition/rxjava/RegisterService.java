@@ -18,6 +18,7 @@ package com.jteam.exhibition.rxjava;
 
 import java.util.Map;
 import rx.Observable;
+import rx.Single;
 import com.jteam.exhibition.Register;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
@@ -32,15 +33,21 @@ import io.vertx.core.Handler;
  * NOTE: This class has been automatically generated from the {@link com.jteam.exhibition.RegisterService original} non RX-ified interface using Vert.x codegen.
  */
 
+@io.vertx.lang.rxjava.RxGen(com.jteam.exhibition.RegisterService.class)
 public class RegisterService {
 
-  final com.jteam.exhibition.RegisterService delegate;
+  public static final io.vertx.lang.rxjava.TypeArg<RegisterService> __TYPE_ARG = new io.vertx.lang.rxjava.TypeArg<>(
+    obj -> new RegisterService((com.jteam.exhibition.RegisterService) obj),
+    RegisterService::getDelegate
+  );
 
+  private final com.jteam.exhibition.RegisterService delegate;
+  
   public RegisterService(com.jteam.exhibition.RegisterService delegate) {
     this.delegate = delegate;
   }
 
-  public Object getDelegate() {
+  public com.jteam.exhibition.RegisterService getDelegate() {
     return delegate;
   }
 
@@ -60,10 +67,10 @@ public class RegisterService {
    * 初始化注册表
    * @return 
    */
-  public Observable<Void> initializePersistenceObservable() { 
-    io.vertx.rx.java.ObservableFuture<Void> resultHandler = io.vertx.rx.java.RxHelper.observableFuture();
-    initializePersistence(resultHandler.toHandler());
-    return resultHandler;
+  public Single<Void> rxInitializePersistence() { 
+    return Single.create(new io.vertx.rx.java.SingleOnSubscribeAdapter<>(fut -> {
+      initializePersistence(fut);
+    }));
   }
 
   /**
@@ -84,10 +91,10 @@ public class RegisterService {
    * @param register 
    * @return 
    */
-  public Observable<Void> addRegisterObservable(Register register) { 
-    io.vertx.rx.java.ObservableFuture<Void> resultHandler = io.vertx.rx.java.RxHelper.observableFuture();
-    addRegister(register, resultHandler.toHandler());
-    return resultHandler;
+  public Single<Void> rxAddRegister(Register register) { 
+    return Single.create(new io.vertx.rx.java.SingleOnSubscribeAdapter<>(fut -> {
+      addRegister(register, fut);
+    }));
   }
 
   /**
@@ -108,10 +115,10 @@ public class RegisterService {
    * @param phone 
    * @return 
    */
-  public Observable<Register> retrieveByPhoneObservable(String phone) { 
-    io.vertx.rx.java.ObservableFuture<Register> resultHandler = io.vertx.rx.java.RxHelper.observableFuture();
-    retrieveByPhone(phone, resultHandler.toHandler());
-    return resultHandler;
+  public Single<Register> rxRetrieveByPhone(String phone) { 
+    return Single.create(new io.vertx.rx.java.SingleOnSubscribeAdapter<>(fut -> {
+      retrieveByPhone(phone, fut);
+    }));
   }
 
 

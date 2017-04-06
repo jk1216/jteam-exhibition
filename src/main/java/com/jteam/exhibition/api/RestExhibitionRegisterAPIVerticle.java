@@ -2,11 +2,9 @@ package com.jteam.exhibition.api;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import org.apache.commons.lang.StringUtils;
-
 import com.jteam.exhibition.Register;
 import com.jteam.exhibition.RegisterService;
 import com.jteam.vertx.common.RestAPIVerticle;
-
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
